@@ -1,0 +1,152 @@
+<% layout("/layouts/boilerplate") %>
+
+<div class="row mt-4">
+
+    <div class="col-md-8 offset-md-2">
+
+        <h3 class="mb-4"><%= listing.title %></h3>
+
+        <div class="card">
+
+            <img
+                src="<%= listing.image.url %>"
+                class="card-img-top"
+                alt="Listing Image"
+            >
+
+            <div class="card-body">
+
+                <h4 class="card-title"><%= listing.title %></h4>
+                <p class="card-text">
+                    <strong>Owner:  </strong><i><%= listing.owner.username %></i>
+                </p>
+                
+
+                <p class="card-text">
+                    <strong>Description:</strong><br>
+                    <%= listing.description %>
+                </p>
+
+                <p class="card-text">
+                    <strong>Price:</strong>
+                    &#8377; <%= listing.price.toLocaleString("en-IN") %> / night
+                </p>
+
+                <p class="card-text">
+                    <strong>Location:</strong>
+                    <%= listing.location %>
+                </p>
+
+                <p class="card-text">
+                    <strong>Country:</strong>
+                    <%= listing.country %>
+                </p>
+               <% if (currUser && currUser._id.equals(listing.owner._id)) { %>
+                <div class="d-flex gap-2 mt-4">
+
+                    <a
+                        href="/listing/<%= listing._id %>/edit"
+                        class="btn btn-dark"
+                    >
+                        Edit
+                    </a>
+
+                    <form
+                        method="POST"
+                        action="/listing/<%= listing._id %>?_method=DELETE"
+                    >
+                        <button class="btn btn-danger">
+                            Delete
+                        </button>
+                    </form>
+
+                </div>
+                <% } %>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+<div class="row mt-4">
+    <div class="col-md-6">
+        <% if(currUser){ %>
+        <h4>Leave a Review</h4>
+        
+        <form action="/listing/<%= listing._id %>/reviews" method="POST" class="needs-validation" novalidate>
+
+            <div class="mb-3">
+                <label for="rating" class="form-label">Rating</label>
+
+                <input
+                    type="range"
+                    class="form-range"
+                    min="1"
+                    max="5"
+                    id="rating"
+                    name="review[rating]"
+                >
+            </div>
+
+            <div class="mb-3">
+                <label for="comment" class="form-label">Comment</label>
+
+                <textarea
+                    class="form-control"
+                    id="comment"
+                    name="review[comment]"
+                    rows="4"
+                    placeholder="Write your review..."
+                    required
+                ></textarea>
+                <div class="invalid-feedback">
+                     Comment cannot be empty.
+                </div>
+            </div>
+
+            <button class="btn btn-dark">
+                Submit Review
+            </button>
+
+        </form>
+        <% } %>
+        <hr>
+        <h3 class="mt-4 mb-3">Customer Reviews</h3>
+
+<div class="row">
+
+<% listing.reviews.forEach((review)=>{ %>
+
+<div class="col-lg-4 col-md-6 mb-4">
+
+<div class="card review-card h-100">
+
+<div class="card-body">
+<h6 class="text-secondary">
+                <i>@<%= review.author.username %></i>
+            </h6>
+<h5 class="mb-3">
+⭐ <%= review.rating %>/5
+</h5>
+
+<p class="text-muted">
+<%= review.comment %>
+</p>
+<form action="/listing/<%= listing._id %>/reviews/<%= review._id %>?_method=DELETE" method="POST">
+            <button class="btn btn-danger btn-sm">
+                Delete Review
+            </button>
+        </form>
+</div>
+
+</div>
+
+</div>
+
+<% }) %>
+
+</div>
+    </div>
+</div>

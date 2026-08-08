@@ -1,0 +1,249 @@
+body {
+    font-family: "Plus Jakarta Sans", sans-serif !important;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    flex: 1;
+}
+/* Navbar */
+.navbar {
+    height: 5rem;
+    background-color: white !important;
+    padding: 0 2rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Logo */
+.navbar-brand {
+    font-size: 2rem;
+    color: #fe424d !important;
+}
+
+.navbar-brand i {
+    transition: 0.3s;
+}
+
+.navbar-brand i:hover {
+    transform: rotate(20deg) scale(1.1);
+}
+
+/* Nav links */
+.nav-link {
+    color: #222222 !important;
+    font-size: 1.1rem;
+    margin-left: 1rem;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+/* Hover effect */
+.nav-link:hover {
+    color: #fe424d !important;
+    transform: translateY(-2px);
+}
+
+/* Active link */
+.nav-link.active {
+    color: #fe424d !important;
+    font-weight: bold;
+}
+
+/* Mobile menu */
+.navbar-toggler {
+    border: none;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+/*footer*/
+/* Footer */
+footer {
+    background-color: #f8f9fa;
+    padding: 1.5rem 0;
+    margin-top: 2rem;
+    border-top: 1px solid #ddd;
+}
+
+/* Main footer container */
+.f-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
+}
+
+/* Social icons */
+.f-info-socials i {
+    font-size: 1.5rem;
+    margin: 0 0.5rem;
+    color: #222;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.f-info-socials i:hover {
+    color: #fe424d;
+    transform: scale(1.1);
+}
+
+/* Links */
+.f-info-links a {
+    text-decoration: none;
+    color: #222;
+    margin: 0 0.7rem;
+    font-weight: 500;
+}
+
+.f-info-links a:hover {
+    color: #fe424d;
+    text-decoration: underline;
+}
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.Listing-link{
+    text-decoration: none;
+    color: inherit;
+    width: 30%;
+    min-width: 300px;
+}
+
+/*cards*/
+/* Listing Link */
+
+a{
+    text-decoration: none !important;
+    color: #222 !important;
+}
+
+/* Card */
+
+.card{
+    border: none !important;
+    margin-bottom: 2rem;
+    transition: all 0.3s ease;
+}
+
+.card:hover{
+    opacity: 0.8;
+    transform: scale(1.02);
+    cursor: pointer;
+}
+
+/* Image */
+
+.card-img-top{
+    width: 100% !important;
+    height: 20rem;
+    object-fit: cover !important;
+    border-radius: 1rem !important;
+}
+
+/* Body */
+
+.card-body{
+    padding: 0.8rem 0 !important;
+}
+
+.card-text{
+    font-weight: 400 !important;
+    color: #222;
+    line-height: 1.5;
+}
+
+/* Mobile */
+
+@media (max-width: 768px){
+
+    .card{
+        width: 100% !important;
+    }
+
+    .card-img-top{
+        height: 16rem;
+    }
+}
+
+@media (max-width: 576px){
+
+    .card{
+        width: 100% !important;
+        margin: 0 auto 2rem;
+    }
+
+    .card-img-top{
+        height: 14rem;
+    }
+}
+.add-btn{
+    background-color: #fe424d !important;
+    color: white !important;
+    border: none !important;
+}
+
+.add-btn:hover{
+    background-color: #e63946 !important;
+}
+.card{
+    border: none !important;
+}
+
+.card-img-top{
+    height: 30vh;
+    object-fit: cover;
+    border-radius: 1rem;
+}
+
+.card-body{
+    padding-left: 0;
+}
+
+.btn-dark{
+    background-color: #222;
+}
+
+.btn-danger{
+    background-color: #fe424d;
+    border: none;
+}
+
+.btn-danger:hover{
+    background-color: #e63946;
+}
+.review-card{
+    text-align: center;
+    border-radius:15px;
+    transition:0.3s;
+    border:none;
+    box-shadow:0 2px 10px rgba(0,0,0,0.1);
+}
+
+.review-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 8px 20px rgba(0,0,0,0.15);
+}
+
+.review-card .card-body{
+    padding:20px;
+}
+
+.review-card h5{
+    color:#ff9800;
+    font-weight:600;
+}
+
+.review-card p{
+    font-size:15px;
+    line-height:1.6;
+}
