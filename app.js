@@ -98,7 +98,9 @@ app.use("/listing/:id/reviews", reviewRouter);
 app.use("/",userRouter);
 
 
-
+app.get("/", (req, res) => {
+    res.redirect("/listing");
+});
 
 app.use((err, req, res, next) => {
     let { statusCode = 500, message = "Something went wrong!" } = err;
