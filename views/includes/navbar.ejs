@@ -1,26 +1,80 @@
+
 <nav class="navbar navbar-expand-lg bg-body-light sticky-top">
   <div class="container-fluid">
-    <a class="navbar-brand" href="/"><i class="fa-solid fa-compass"></i></a>
-    <button class="navbar-toggler" type="button" listing-bs-toggle="collapse" listing-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+
+    <!-- Logo -->
+    <a class="navbar-brand" >
+      <i class="fa-solid fa-compass"></i>
+    </a>
+
+    <!-- Toggle button -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
       <span class="navbar-toggler-icon"></span>
     </button>
+
+    <!-- Navbar content -->
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+
+      <!-- Left side -->
       <div class="navbar-nav">
-        <a class="nav-link active" aria-current="page" href="#">Home</a>
-        <a class="nav-link" href="#">Features</a>
-        <a class="nav-link" href="/listing">ALL Listings</a>
-        <a class="nav-link" href="/listing/new">Add new Listings</a>
-        
+        <a class="nav-link" href="/listing">Explore</a>
       </div>
+
+      <!-- Search -->
+      <div class="navbar-nav  mx-auto">
+        <form class="d-flex" role="search" action="/listing" method="get">
+          <input
+            class="form-control me-2 search-box"
+            type="search"
+            placeholder="Search Destination"
+            aria-label="Search"
+          >
+          <button
+            class="btn btn-search"
+            type="submit"
+          >
+            <i class="fa-solid fa-magnifying-glass"></i>Search
+          </button>
+        </form>
+      </div>
+
+      <!-- Right side -->
       <div class="navbar-nav ms-auto">
-        <% if(!currUser) {%>
-        <a class="nav-link" href="/signup">SignUp</a>
-        <a class="nav-link" href="/login">Login</a>
+
+        <a class="nav-link" href="/listing/new">
+          Airbnb your home
+        </a>
+
+        <% if(!currUser) { %>
+
+          <a class="nav-link" href="/signup">
+            <b>Signup</b>
+          </a>
+
+          <a class="nav-link" href="/login">
+            <b>Login</b>
+          </a>
+
         <% } %>
-        <% if(currUser) {%>
-        <a class="nav-link" href="/logout">Logout</a>
+
+        <% if(currUser) { %>
+
+          <a class="nav-link" href="/logout">
+            <b>Logout</b>
+          </a>
+
         <% } %>
+
       </div>
+
     </div>
   </div>
 </nav>
