@@ -1,13 +1,12 @@
-
 <nav class="navbar navbar-expand-lg bg-body-light sticky-top">
   <div class="container-fluid">
 
     <!-- Logo -->
-    <a class="navbar-brand" >
+    <a class="navbar-brand" href="/listing">
       <i class="fa-solid fa-compass"></i>
     </a>
 
-    <!-- Toggle button -->
+    <!-- Mobile Toggle -->
     <button
       class="navbar-toggler"
       type="button"
@@ -20,40 +19,54 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <!-- Navbar content -->
+    <!-- Navbar Content -->
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 
-      <!-- Left side -->
+      <!-- Left Links -->
       <div class="navbar-nav">
-        <a class="nav-link" href="/listing">Explore</a>
-      </div>
 
-      <!-- Search -->
-      <div class="navbar-nav  mx-auto">
-        <form class="d-flex" role="search" action="/listing" method="get">
-          <input
-            class="form-control me-2 search-box"
-            type="search"
-            placeholder="Search Destination"
-            aria-label="Search"
-          >
-          <button
-            class="btn btn-search"
-            type="submit"
-          >
-            <i class="fa-solid fa-magnifying-glass"></i>Search
-          </button>
-        </form>
-      </div>
-
-      <!-- Right side -->
-      <div class="navbar-nav ms-auto">
+        <a class="nav-link" href="/listing">
+          Explore
+        </a>
 
         <a class="nav-link" href="/listing/new">
           Airbnb your home
         </a>
 
-        <% if(!currUser) { %>
+      </div>
+
+
+      <!-- Search -->
+      <form
+        class="d-flex mx-auto navbar-search"
+        role="search"
+        action="/listing"
+        method="get"
+      >
+
+        <input
+          class="form-control me-2 search-box"
+          type="search"
+          name="search"
+          placeholder="Search Destination"
+          aria-label="Search"
+        >
+
+        <button
+          class="btn btn-search"
+          type="submit"
+        >
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <span>Search</span>
+        </button>
+
+      </form>
+
+
+      <!-- Right Links -->
+      <div class="navbar-nav ms-auto">
+
+        <% if (!currUser) { %>
 
           <a class="nav-link" href="/signup">
             <b>Signup</b>
@@ -65,7 +78,8 @@
 
         <% } %>
 
-        <% if(currUser) { %>
+
+        <% if (currUser) { %>
 
           <a class="nav-link" href="/logout">
             <b>Logout</b>
@@ -76,5 +90,6 @@
       </div>
 
     </div>
+
   </div>
 </nav>

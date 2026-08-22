@@ -12,6 +12,7 @@ body {
     width: 100%;
 }
 
+
 /* =========================
    NAVBAR
 ========================= */
@@ -345,7 +346,7 @@ a {
 
 
 /* =========================
-   MOBILE
+   MOBILE NAVBAR
 ========================= */
 
 @media (max-width: 768px) {
@@ -357,25 +358,96 @@ a {
         overflow-x: hidden;
     }
 
+    /* Navbar */
+
     .navbar {
         min-height: 4.5rem;
+        height: auto;
         padding: 0.6rem 1rem;
     }
 
     .navbar-brand {
         font-size: 1.6rem;
+        margin-right: 0;
     }
 
+    .navbar-toggler {
+        display: block;
+        border: none;
+        padding: 0.4rem;
+        margin-left: auto;
+    }
+
+    .navbar-toggler:focus {
+        box-shadow: none;
+    }
+
+    /* Mobile dropdown */
+
     .navbar-collapse {
+        width: 100%;
         background-color: white;
         padding: 1rem 0;
     }
 
-    .nav-link {
-        font-size: 1rem;
-        margin-left: 0;
-        padding: 0.6rem 0 !important;
+    /* Navbar items */
+
+    .navbar-nav {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
     }
+
+    .navbar-nav .nav-item {
+        width: 100%;
+    }
+
+    .navbar-nav .nav-link {
+        display: block;
+        width: 100%;
+        font-size: 1rem;
+        margin-left: 0 !important;
+        padding: 0.7rem 0 !important;
+        color: #222222 !important;
+    }
+
+    .navbar-nav .nav-link:hover {
+        color: #fe424d !important;
+        transform: none;
+    }
+
+    /* Login / Signup / Logout */
+
+    .navbar-nav a,
+    .navbar-nav button {
+        font-size: 1rem;
+    }
+
+    /* Logout form */
+
+    .navbar-nav form {
+        width: 100%;
+        margin: 0;
+    }
+
+    .navbar-nav form button {
+        background: none;
+        border: none;
+        padding: 0.7rem 0;
+        width: 100%;
+        text-align: left;
+        color: #222;
+        font-size: 1rem;
+    }
+
+    .navbar-nav form button:hover {
+        color: #fe424d;
+    }
+
+
+    /* Container */
 
     .container {
         width: 100%;
@@ -500,21 +572,42 @@ a {
     }
 
     .navbar-brand {
-        font-size: 1.4rem;
+        font-size: 1.35rem;
     }
 
     .navbar-toggler {
-        padding: 0.25rem 0.4rem;
+        padding: 0.3rem;
+        margin-left: auto;
     }
 
     .navbar-collapse {
+        width: 100%;
         padding: 0.8rem 0;
     }
 
-    .nav-link {
+    .navbar-nav {
+        width: 100%;
+    }
+
+    .navbar-nav .nav-item {
+        width: 100%;
+    }
+
+    .navbar-nav .nav-link {
+        width: 100%;
         font-size: 0.95rem;
-        margin-left: 0;
-        padding: 0.5rem 0 !important;
+        padding: 0.6rem 0 !important;
+        margin-left: 0 !important;
+    }
+
+    .navbar-nav form {
+        width: 100%;
+    }
+
+    .navbar-nav form button {
+        width: 100%;
+        padding: 0.6rem 0;
+        font-size: 0.95rem;
     }
 
 
@@ -704,4 +797,116 @@ a {
     .tax-toggle {
         font-size: 0.7rem;
     }
+}
+/* =========================
+   NAVBAR MOBILE FIX
+========================= */
+
+.navbar-search {
+    width: 100%;
+    max-width: 500px;
+}
+
+.navbar-search .search-box {
+    width: 100%;
+}
+
+
+/* =========================
+   MOBILE NAVBAR
+========================= */
+
+@media (max-width: 991px) {
+
+    .navbar {
+        padding: 0.6rem 1rem;
+    }
+
+    .navbar-collapse {
+        width: 100%;
+        background-color: white;
+        padding: 1rem 0;
+    }
+
+    .navbar-nav {
+        width: 100%;
+    }
+
+    .navbar-nav .nav-link {
+        width: 100%;
+        margin-left: 0 !important;
+        padding: 0.65rem 0 !important;
+    }
+
+    /* Search */
+
+    .navbar-search {
+        width: 100%;
+        max-width: 100%;
+        margin: 0.8rem 0 !important;
+        display: flex;
+    }
+
+    .navbar-search .search-box {
+        min-width: 0;
+        flex: 1;
+    }
+
+    .navbar-search .btn-search {
+        flex-shrink: 0;
+        white-space: nowrap;
+    }
+
+}
+
+
+/* =========================
+   iPHONE SE
+========================= */
+
+@media (max-width: 400px) {
+
+    .navbar {
+        padding: 0.5rem 0.8rem;
+    }
+
+    .navbar-brand {
+        font-size: 1.4rem;
+    }
+
+    .navbar-toggler {
+        padding: 0.3rem;
+    }
+
+    .navbar-collapse {
+        padding: 0.8rem 0;
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 0.95rem;
+        padding: 0.55rem 0 !important;
+    }
+
+    /* Search on iPhone SE */
+
+    .navbar-search {
+        width: 100%;
+        margin: 0.7rem 0 !important;
+    }
+
+    .navbar-search .search-box {
+        font-size: 0.8rem;
+        height: 38px;
+    }
+
+    .navbar-search .btn-search {
+        height: 38px;
+        padding: 0 0.7rem;
+        font-size: 0.8rem;
+    }
+
+    .navbar-search .btn-search i {
+        margin-right: 2px;
+    }
+
 }
